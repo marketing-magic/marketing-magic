@@ -8,6 +8,13 @@
     height: auto;
 }
 
+/* הגדרה כללית לתמונות */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
 /* אייקון פייסבוק בסרגל הניווט */
 .facebook-icon img {
     width: 24px; /* שינוי הגודל */
@@ -44,4 +51,10 @@ nav ul li a {
 nav ul li a:hover {
     color: #fff;
     transform: scale(1.1);
+}
+
+/* כללים נוספים כדי להבטיח את גודל האייקון */
+.facebook-icon img {
+    max-width: 24px;
+    max-height: 24px;
 }
