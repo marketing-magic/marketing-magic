@@ -394,3 +394,10 @@ a:focus {
     max-width: 800px;
 }
 
+/* אייקון פייסבוק */
+.facebook-icon img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
