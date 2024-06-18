@@ -6,7 +6,7 @@
     <title>קבלו את המדריך לשיווק דיגיטלי בחינם</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        
+
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f0f4f8;
@@ -16,15 +16,16 @@
             direction: rtl;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: auto;
             background: #ffffff;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             margin-top: 50px;
+            text-align: right;
         }
-        h1 {
+        h1, h2 {
             color: #333333;
         }
         p {
@@ -46,12 +47,6 @@
         }
         .cta-button:hover {
             background-color: #0056b3;
-        }
-        iframe {
-            width: 100%;
-            height: 600px;
-            border: none;
-            margin-top: 20px;
         }
         .contact-info {
             margin-top: 20px;
@@ -88,6 +83,39 @@
         .hero-section p {
             font-size: 1.2em;
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -97,9 +125,12 @@
     </div>
     <div class="container">
         <img src="logo.png" alt="Logo" class="logo">
-        <p>המדריך כולל אסטרטגיות SEO, שיווק תוכן ושיווק ברשתות חברתיות.</p>
-        <a href="#form" class="cta-button">קבלו את המדריך עכשיו</a>
-        <iframe id="form" src="https://forms.gle/tvXnLRCaLA6icEDi8">Loading…</iframe>
+        <h1>למה כל בעל עסק צריך את המדריך לשיווק דיגיטלי?</h1>
+        <p>המדריך לשיווק דיגיטלי הוא כלי חיוני לכל בעל עסק שמעוניין להגדיל את נוכחותו ברשת, להעלות את המכירות ולהפחית את ההוצאות המיותרות. המדריך כולל אסטרטגיות מתקדמות לשיווק באמצעות SEO, שיווק תוכן, ושיווק ברשתות חברתיות.</p>
+        <p>בעזרת המדריך תוכלו ללמוד כיצד להגיע לקהל יעד רחב וממוקד, ליצור תכנים שמעניינים את הלקוחות שלכם, ולהשתמש בכלים דיגיטליים מתקדמים למעקב אחר ביצועים ושיפורם.</p>
+        <h2>מי אנחנו?</h2>
+        <p>ברוכים הבאים ל- Marketing Magic, חברת שיווק דיגיטלי המובילה במתן פתרונות מתקדמים לעסקים קטנים ובינוניים. Marketing Magic הוקמה מתוך רצון עז לעזור לעסקים לגדול ולנהל את עצמם בצורה מיטבית. אנו מבינים את התסכול שבהשקעת כספים רבים בלימודים ושירותים ללא תוצאות מספקות. הייחודיות שלנו טמונה בידע המעמיק שלנו בשיווק דיגיטלי, פרסום ממומן בכל הפלטפורמות, יישום מערכות CRM, ותכנות בשפות Java ו-Python. אנו כאן כדי לספק לכם את הכלים והפתרונות שיביאו את העסק שלכם להצלחה.</p>
+        <button class="cta-button" id="openModalBtn">קבלו את המדריך עכשיו</button>
         <div class="contact-info">
             <p>ליצירת קשר:</p>
             <p>
@@ -113,5 +144,33 @@
             </p>
         </div>
     </div>
+    
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModalBtn">&times;</span>
+            <iframe id="form" src="https://forms.gle/tvXnLRCaLA6icEDi8" width="100%" height="500px">Loading…</iframe>
+        </div>
+    </div>
+
+    <script>
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("openModalBtn");
+        var span = document.getElementById("closeModalBtn");
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
